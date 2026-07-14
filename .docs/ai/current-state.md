@@ -6,16 +6,22 @@
 
 `main`
 
-## Last Session Summary
+## Plan
 
-**Date**: <!-- YYYY-MM-DD -->
-
-<!-- 3-5 bullet points: what was done, what changed -->
+- [x] Make repo public + enable GitHub Pages (`main` / root)
+- [x] Commit `CNAME` → `harnessdeck.finklea.dev`
+- [ ] Human: add Cloudflare DNS CNAME `harnessdeck` → `taylorfinklea.github.io` (**DNS-only / grey cloud**)
+- [ ] After DNS resolves: `gh api -X PUT repos/TaylorFinklea/harnessdeck-site/pages -f https_enforced=true`
 
 ## Build Status
 
-- <!-- e.g., "iOS: builds clean", "Tests: 42/42 passing", "Deploy: live" -->
+- Pages: `status=built`; edge serves 200 (verified via `Host:` header against 185.199.108.153)
+- `harnessdeck.finklea.dev`: does NOT resolve yet — DNS record missing
 
 ## Blockers
 
-- <!-- e.g., "Waiting on API key from team lead" or "None" -->
+- Custom domain unreachable until the human adds the Cloudflare DNS record above.
+
+## Open Questions
+
+- Untracked screenshot litter in worktree (`hero.png`, `fullpage.png`, `.playwright-mcp/`) — delete or gitignore.
