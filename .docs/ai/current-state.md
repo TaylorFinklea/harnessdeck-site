@@ -10,17 +10,19 @@
 
 - [x] Make repo public + enable GitHub Pages (`main` / root)
 - [x] Commit `CNAME` → `harnessdeck.finklea.dev`
-- [ ] Human: add Cloudflare DNS CNAME `harnessdeck` → `taylorfinklea.github.io` (**DNS-only / grey cloud**)
-- [ ] After DNS resolves: `gh api -X PUT repos/TaylorFinklea/harnessdeck-site/pages -f https_enforced=true`
+- [x] Human added Cloudflare DNS record (came up **proxied** / orange cloud)
+- [x] Decision: keep Cloudflare proxy on (see decisions.md 2026-07-15)
+- [ ] Human: Cloudflare SSL/TLS → set mode **Full (strict)**
+- [ ] Human: Cloudflare Edge Certificates → enable **Always Use HTTPS** (http:// not yet redirected)
 
 ## Build Status
 
-- Pages: `status=built`; edge serves 200 (verified via `Host:` header against 185.199.108.153)
-- `harnessdeck.finklea.dev`: does NOT resolve yet — DNS record missing
+- **LIVE**: https://harnessdeck.finklea.dev/ → 200, correct title, 36664 bytes (served via Cloudflare)
+- GitHub Pages `status=built`; GitHub-native cert `null` / `https_enforced=false` (N/A while proxied)
 
 ## Blockers
 
-- Custom domain unreachable until the human adds the Cloudflare DNS record above.
+- None. Site is live. Remaining items are Cloudflare-dashboard toggles only the human can do.
 
 ## Open Questions
 
